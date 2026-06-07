@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>网站监控</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>网站状态监控</h1>
+    <p class="desc">每60秒自动更新</p>
+
+    <button onclick="load()">刷新</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>网站</th>
+          <th>状态</th>
+          <th>延迟</th>
+          <th>检测时间</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
