@@ -1,5 +1,5 @@
 // 改成你的 Worker URL
-const API_URL = "https://dfgg.de5.net/api/status";
+const API_URL = "/api/status";
 
 async function load() {
   const tbody = document.getElementById("table-body");
@@ -11,7 +11,7 @@ async function load() {
 
     tbody.innerHTML = "";
 
-    data.forEach(site => {
+    data.forEach((site) => {
       const tr = document.createElement("tr");
 
       const statusClass = site.status === "UP" ? "status-up" : "status-down";
@@ -19,13 +19,12 @@ async function load() {
       tr.innerHTML = `
         <td><a href="${site.url}" target="_blank">${site.name}</a></td>
         <td class="${statusClass}">${site.status}</td>
-        <td>${site.latency ?? "-" } ms</td>
+        <td>${site.latency ?? "-"} ms</td>
         <td>${formatTime(site.time)}</td>
       `;
 
       tbody.appendChild(tr);
     });
-
   } catch (err) {
     tbody.innerHTML = "<tr><td colspan='4'>加载失败</td></tr>";
   }
